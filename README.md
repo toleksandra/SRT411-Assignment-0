@@ -1,10 +1,13 @@
 # SRT411-Assignment-0
 Student name : Oleksandra Tarasiuk
+
 Student ID:109521153
+
 Course:SRT411(Security arts:Digital analysis)
+
 Course professor: Lisa Li
 
-Assignmnet 0
+Assignment 0
 
 Assignment goal:
 This assignment provides introduction to using R and R studio based on simple examples from the provided tutorial.(https://cran.r-project.org/doc/contrib/Torfs+Brauer-Short-R-Intro.pdf) and intro to using GitHub.
