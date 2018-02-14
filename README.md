@@ -22,6 +22,7 @@ This repository conatins:
 - Scripts folder (Folder for scripts and files used in this assignment. Some of the questions asked for use of a script, so if you want to run this file in CRAN you will need to use my scripts.)
 
 Resources used in this assignment:
+
 1)https://www.dataquest.io/blog/how-to-share-data-science-portfolio/
 
 2)https://rmarkdown.rstudio.com/
