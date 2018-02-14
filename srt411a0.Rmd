@@ -1,0 +1,314 @@
+---
+title: "SRT411A0"
+author: Oleksandra Tarasiuk
+date: February 13, 2018
+output: pdf_document
+---
+
+#Student name: Oleksandra Tarasiuk
+#GitHub username: toleksandra
+#SRT411- Assignment0
+
+#This assignment covers basics of using R and R studio and provides instuctions of working in GitHub.
+#I will be following tutorial provided by my professor.
+#Tutorial link:https://cran.r-project.org/doc/contrib/Torfs+Brauer-Short-R-Intro.pdf
+#This tutorial consists of basic explanation of what R language is and 14 questions(ToDos), answers to which I included below.
+#I added short explanation to each answer along with the code I used for it. I also added plots whenever they are needed.
+#Note that some of the answers are generating a new text files or using specific scripts. All of the files and scripts needed for this assignment can be found in my repository at the GitHub.
+#I also provided links I used as a resources for this assignment in the end of this document.
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Question 1
+---
+ToDo:
+Compute the difference between 2014 and the
+year you started at this university and divide
+this by the difference between 2014 and the year
+you were born. Multiply this with 100 to get
+the percentage of your life you have spent at
+this university. Use brackets if you need them.
+
+Answer:
+For my code I used year 2018, so I will get positive numbers.
+This code is basic arithmetic calculation.
+
+```{r todo1}
+((2018-2015)/(2018-1998))*100
+```
+
+Question 2
+---
+ToDo:
+Repeat the previous ToDo, but with several
+steps in between. You can give the variables
+any name you want, but the name has to start
+with a letter.
+
+Answer:
+This ToDo goal is to create variable and make some simple calculations with it.
+
+```{r todo2}
+loan = 5000
+loan * 0.5
+loan
+loan = loan / 9
+loan
+```
+
+
+Question 3
+---
+ToDo:
+Compute the sum of 4, 5, 8 and 11 by first combining
+them into a vector and then using the
+function sum.
+
+Answer:
+Create vector with few values inside. Calculate their sum with sum() function.
+
+```{r todo3}
+d=c(4,5,8,11)
+sum(x=d)
+```
+
+
+Question 4
+---
+ToDo:
+Plot 100 normal random numbers.
+
+Answer:
+Using rnorm() function to generate random numbers.
+
+Plot:
+
+```{r todo4, echo=FALSE}
+plot(rnorm(100))
+```
+
+
+Question 5
+---
+ToDo:
+Find help for the sqrt function.
+
+Answer:
+Using R commands to find more about 'sqrt' function.
+
+```{r todo5}
+help(sqrt)
+example(sqrt)
+```
+
+
+Question 6
+---
+ToDo:
+Make a file called firstscript.R containing Rcode
+that generates 100 random numbers and
+plots them, and run this script several times.
+
+Answer:
+Run a script. The script itself can be found in my GitHub repository.
+
+```{r todo6}
+source("firstscript.R")
+```
+
+
+
+Question 7
+---
+ToDo:
+Put the numbers 31 to 60 in a vector named
+P and in a matrix with 6 rows and 5 columns
+named Q. Tip: use the function seq. Look at
+the different ways scalars, vectors and matrices
+are denoted in the workspace window.
+
+Answer:
+First, I created vector 'P' and specified that it should include numbers from 31 to 60. Next, I created matrix 'Q', which specified that I need 5 columns and 6 rows.
+
+```{r todo7}
+P = seq(from=31, to=60, by=1)
+Q = matrix(data=c(P),ncol = 5,nrow = 6)
+```
+```{r}
+P
+```
+```{r}
+Q
+```
+Question 8
+---
+ToDo:
+Make a script file which constructs three random
+normal vectors of length 100. Call these
+vectors x1, x2 and x3. Make a data frame called
+t with three columns (called a, b and c) containing
+respectively x1, x1+x2 and x1+x2+x3.
+
+Answer:
+I create file secondscript1.R, because I will need to modify it in the following ToDo's, but I want to provide clear answer for this question.
+
+```{r todo8}
+source("secondscript1.R")
+```
+
+Question 9
+---
+ToDo:
+Add following lines to the script file of the previous
+section.
+
+Lines to add:
+plot(t$a, type="l", ylim=range(t),lwd=3, col=rgb(1,0,0,0.3))
+lines(t$b, type="s", lwd=2,col=rgb(0.3,0.4,0.3,0.9))
+points(t$c, pch=20, cex=4,col=rgb(0,0,1,0.3))
+
+Answer:
+I added this lines to the copy of file from previous question. Run the script. (Can be found in my itHub repository).
+
+```{r todo9}
+source("secondscript2.R")
+```
+
+Abbreviations:
+
+rgb - red/blue/green. Identifies the colors.
+
+lwd - line width.
+
+pch - option to specify symbols to use when plotting points.
+
+cex - number indicating the amount by which plotting text.
+
+and symbols should be scaled relative to the default
+
+
+
+Question 10
+---
+ToDo:
+Make a file called tst1.txt in Notepad from
+the example in Figure 4 and store it in your
+working directory. Write a script to read it, to
+multiply the column called g by 5 and to store
+it as 'tst2.txt'.
+
+Answer:
+Firstly, I create data frame and add values tp it.Next,I write (save) it to the 'tst1.txt' file. After that I copy data from 'tst1.txt' to the new 'd2' data frame. I change the column of 'g' value, multiplying it by 5 and save changed values to the file 'tst2.txt'. (All the files in my GitHub repository)
+
+```{r todo10}
+d = data.frame(a = c(1,2,4,8,16,32), g = c(2,4,8,16,32,64), x = c(3,6,12,24,48,96))
+write.table(d, file="tst1.txt",row.names=FALSE)
+d2 = read.table(file="tst1.txt",header=TRUE)
+write.table(d2$g*5, file="tst2.txt")
+```
+
+
+Question 11
+---
+ToDo:
+Compute the mean of the square root of a vector
+of 100 random numbers.
+
+Answer:
+I am using rnorm function to generate random numbers.
+
+```{r todo11}
+sqrt(mean(rnorm(100)))
+```
+
+Question 12
+---
+ToDo:
+Make a graph with on the x-axis: today, Sinterklaas
+2014 and your next birthday and on
+the y-axis the number of presents you expect on
+each of these days.
+
+Answer:
+Note- I am using 2017 insted of 2014 from in question.
+
+```{r todo12}
+date1=strptime( c("20171226", "20180331"), format="%Y%m%d")
+presents = c(4,3)
+```
+
+
+Question 13
+---
+ToDo:
+Make a vector from 1 to 100. Make a for-loop
+which runs through the whole vector. Multiply
+the elements which are smaller than 5 and larger
+than 90 with 10 and the other elements with 0.1.
+
+Answer:
+For this question I firstly create 2 vectors. 'vec13' contains values from 1 to 100, and 'h' is an empty one that I will need to use in loops.
+First loop is for loop: For all 'i'(objects) from 1 to 100, I declare that if objects in 'vec13' are either less than 5 or larger than 90 they should be multiply by 10. Otherwise, multiply by 0.1.
+
+```{r todo13}
+vec13 = seq(from=1, to=100)
+h = c()
+for(i in 1:100)
+{
+  if (vec13[i]<5 && vec13[i]>90){
+    h[i]=vec13[i]*10
+  }
+  else{
+    h[i]=vec13[i]*0.1
+  }
+}
+```
+```{r}
+vec13
+h
+```
+
+Question 14
+---
+ToDo:
+Write a function for the previous ToDo, so
+that you can feed it any vector you like
+(as argument). Use a for-loop in the function
+to do the computation with each element.
+Use the standard R function length
+in the specification of the counter.
+
+Answer:
+```{r todo14}
+function14= function(arg1,arg2 )
+{
+  vec13[i]=arg1[i];
+  for(i in length(vec13)){
+    }
+}
+```
+```{r}
+vec13
+```
+
+
+Resources used:
+---
+1)https://www.dataquest.io/blog/how-to-share-data-science-portfolio/
+
+2)https://rmarkdown.rstudio.com/
+
+3)https://nicercode.github.io/guides/reports/
+
+4)http://kbroman.org/knitr_knutshell/pages/markdown.html
+
+5)http://kbroman.org/knitr_knutshell/pages/Rmarkdown.html
+
+6)https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf
+
+7)https://www.statmethods.net/advgraphs/parameters.html
+
+8)https://cran.r-project.org/doc/contrib/Torfs+Brauer-Short-R-Intro.pdf
