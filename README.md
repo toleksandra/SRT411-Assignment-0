@@ -16,3 +16,7 @@ Assignmnet objectives:
 - learn how to use "knitr"
 - learn how to use GitHub and download finished code files 
 
+This repository conatins:
+- SRT411.Rmd file (all of my code)
+- Srt411.pdf (pdf format)
+- Scripts and files for my questions
